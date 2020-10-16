@@ -1618,6 +1618,10 @@ func (wb *WindowBase) calculateTextSizeForWidth(width int) Size {
 	return wb.calculateTextSizeImplForWidth(wb.text(), width)
 }
 
+func CalculateTextSize(text string, font *Font, dpi int, width int, hwnd win.HWND) Size {
+	return calculateTextSize(text, font, dpi, width, hwnd)
+}
+
 // calculateTextSize calculates text size at specified DPI and for width in native pixels.
 func calculateTextSize(text string, font *Font, dpi int, width int, hwnd win.HWND) Size {
 	hdc := win.GetDC(hwnd)
